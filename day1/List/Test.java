@@ -20,6 +20,12 @@ public class Test {
 		
 		l1.deleteAtBeg();
 		l1.display();
+		
+		//l1.insertAtPosi(69,3);
+		//l1.display();
+		
+		l1.deleteAtposi(1);
+		l1.display();
 
 	}
 

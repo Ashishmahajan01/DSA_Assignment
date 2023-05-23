@@ -6,19 +6,15 @@ class ll{
 
 	Node head; // head of list
 
-	/*
-	 * Linked list Node. This inner class is made static so that main() can access
-	 * it
-	 */
 	static class Node {
 
 		int data;
 		Node next;
 
-		Node(int d) {
+		Node(int d) {      // Constructor
 			this.data = d;
 			next = null;
-		} // Constructor
+		} 
 	}
 
 	/*

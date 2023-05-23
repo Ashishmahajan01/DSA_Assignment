@@ -44,7 +44,6 @@ public class LinkedList {
 
 	public boolean deleteAtLast() {
 		Node temp = head;
-		
 		while(temp.getNext().getNext() != null) {
 			temp = temp.getNext();
 		}
@@ -52,6 +51,51 @@ public class LinkedList {
 		return true;
 
 	}
+	public boolean insertAtPosi(int value, int index) {
+		Node nn = new Node(value);
+		Node temp = head;
+		if(head == null)
+			return false;
+		int counter=1;
+		while(temp.getNext().getNext() != null &&counter <index-1) {
+			counter ++;
+			temp = temp.getNext();
+//			if(temp.getNext().getNext()==null)
+//				return false;
+		}
+		if(counter !=index-1) {
+			return false;
+		}
+		nn.setNext(temp.getNext());
+		temp.setNext(nn);
+		return true;
+		
+	}
+	
+	public boolean deleteAtposi(int index) {
+		Node temp = head;
+		if(index ==1) {
+			head = temp.getNext();
+			return true;
+		}
+		if(head == null)
+			return false;
+		int counter=1;
+		while(temp.getNext().getNext() != null &&counter <index-1) {
+			counter ++;
+			temp = temp.getNext();
+//			if(temp.getNext().getNext()==null)
+//				return false;
+		}
+		if(counter !=index-1) {
+			return false;
+		}
+		temp.setNext(temp.getNext().getNext());
+		return true;
+		
+		
+	}
+	
 
 	public void display() {
 		Node temp = head;
@@ -81,5 +125,9 @@ public class LinkedList {
 		}
 
 	}
+
+	
+
+	
 
 }
